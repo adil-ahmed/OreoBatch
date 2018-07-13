@@ -5,18 +5,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AnimationActivity"
-  >
+    tools:context=".ListViewActivity">
 
-    <ImageView
-        android:layout_margin="10dp"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:src="@drawable/pic"
-        android:id="@+id/cat"
-        />
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/listview">
 
-
-
+    </ListView>
 
 </LinearLayout>

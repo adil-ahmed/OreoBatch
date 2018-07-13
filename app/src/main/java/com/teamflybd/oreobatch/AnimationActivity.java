@@ -19,8 +19,11 @@ public class AnimationActivity extends AppCompatActivity {
 
         duration = 10000; // speed decreses as time increased
         x = 360; // x-axis (if +ve move to right.if -ve move to left)
-        y = 400; // y-axis (if +ve move towards top.if -ve move towards bottom)
+        y = 400; // y-axis (if +ve move towards bottom.if -ve move towards top)
 
         cat.animate().translationX(x).translationY(y).setDuration(duration).start();
+
+
+
     }
 }
