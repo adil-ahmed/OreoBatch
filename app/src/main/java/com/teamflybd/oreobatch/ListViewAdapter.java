@@ -39,8 +39,8 @@ public class ListViewAdapter extends BaseAdapter{
         {
             convertView = context.getLayoutInflater().inflate(R.layout.list_item, parent, false);
         }
-        TextView peopleTextView = context.findViewById(R.id.listText);
-        String peopleText = people.get(position);
+        TextView peopleTextView = convertView.findViewById(R.id.listText);
+        String peopleText = people.get(position).toString();
         peopleTextView.setText(peopleText);
 
         return convertView;
