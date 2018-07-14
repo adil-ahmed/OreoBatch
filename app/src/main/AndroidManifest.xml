@@ -12,10 +12,8 @@
         <activity android:name=".MainActivity" />
         <activity android:name=".ProgressDialogActivity" />
         <activity android:name=".ActivityLifecycle" />
-        <activity android:name=".IntentEmail"></activity>
-        <activity android:name=".AnimationActivity">
-
-        </activity>
+        <activity android:name=".IntentEmail" />
+        <activity android:name=".AnimationActivity"></activity>
         <activity android:name=".ListViewActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,6 +21,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".Timer"></activity>
     </application>
 
 </manifest>
