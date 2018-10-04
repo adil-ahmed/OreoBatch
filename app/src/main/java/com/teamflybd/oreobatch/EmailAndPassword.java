@@ -15,6 +15,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
+import com.google.firebase.auth.FirebaseUser;
 
 public class EmailAndPassword extends AppCompatActivity {
 
@@ -24,6 +25,7 @@ public class EmailAndPassword extends AppCompatActivity {
 
     FirebaseAuth firebaseAuth;
     FirebaseAuth.AuthStateListener authStateListener;
+    FirebaseUser user;
 
 
     @Override
@@ -36,7 +38,7 @@ public class EmailAndPassword extends AppCompatActivity {
         authStateListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                //  FirebaseUser user = firebaseAuth.getCurrentUser();
+                   user = firebaseAuth.getCurrentUser();
             }
         };
 
@@ -63,7 +65,13 @@ public class EmailAndPassword extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful())
                         {
-                            startActivity(new Intent(EmailAndPassword.this,MainActivity.class));
+                            user.sendEmailVerification().addOnCompleteListener(new OnCompleteListener<Void>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Void> task) {
+                                    Toast.makeText(EmailAndPassword.this, "A verification email is sent to "+emailText, Toast.LENGTH_SHORT).show();
+                                }
+                            });
+                            startActivity(new Intent(EmailAndPassword.this,SignIn.class));
                         }
                         else if(!(task.isSuccessful()))
                         {

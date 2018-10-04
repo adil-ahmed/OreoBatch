@@ -14,6 +14,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class SignIn extends AppCompatActivity {
     Button signIn,signUp;
@@ -22,6 +23,7 @@ public class SignIn extends AppCompatActivity {
 
     FirebaseAuth firebaseAuth;
     FirebaseAuth.AuthStateListener authStateListener;
+    FirebaseUser user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +36,7 @@ public class SignIn extends AppCompatActivity {
         authStateListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                //  FirebaseUser user = firebaseAuth.getCurrentUser();
+                   user = firebaseAuth.getCurrentUser();
             }
         };
 
@@ -59,7 +61,15 @@ public class SignIn extends AppCompatActivity {
                             }
                             if(task.isSuccessful())
                             {
-                                startActivity(new Intent(SignIn.this,MainActivity.class));
+                                if(user.isEmailVerified())
+                                {
+                                    startActivity(new Intent(SignIn.this,MainActivity.class));
+                                }
+                                else {
+                                    Toast.makeText(SignIn.this, "Please check your email.A verification link " +
+                                            "was sent to that email while signup", Toast.LENGTH_SHORT).show();
+                                }
+
                             }
 
                             else if(!(task.isSuccessful()))
