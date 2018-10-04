@@ -1,0 +1,45 @@
+{
+  "project_info": {
+    "project_number": "593230159787",
+    "firebase_url": "https://oreobatch-96d42.firebaseio.com",
+    "project_id": "oreobatch-96d42",
+    "storage_bucket": "oreobatch-96d42.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:593230159787:android:7befffb267d3742e",
+        "android_client_info": {
+          "package_name": "com.teamflybd.oreobatch"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "593230159787-lvo6mc9n08djltcem0k1poiroeimsb2p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAowflZh7GojvS36IAIi3FjlcrcybZP9Ik"
+        },
+        {
+          "current_key": "AIzaSyAowflZh7GojvS36IAIi3FjlcrcybZP9Ik"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

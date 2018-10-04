@@ -8,6 +8,7 @@
          location permissions for the 'MyLocation' functionality. 
     -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -21,12 +22,10 @@
         <activity android:name=".ActivityLifecycle" />
         <activity android:name=".IntentEmail" />
         <activity android:name=".AnimationActivity" />
-        <activity android:name=".ListViewActivity"></activity>
+        <activity android:name=".ListViewActivity" />
         <activity android:name=".Timer" />
         <activity android:name=".SharedPreference" />
-        <activity android:name=".DyanamicEditText">
-
-        </activity>
+        <activity android:name=".DyanamicEditText" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -41,7 +40,12 @@
 
         <activity
             android:name=".MapsActivity"
-            android:label="@string/title_activity_maps">
+            android:label="@string/title_activity_maps" />
+        <activity android:name=".userLocation" />
+        <activity android:name=".EmailAndPassword">
+
+        </activity>
+        <activity android:name=".SignIn">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

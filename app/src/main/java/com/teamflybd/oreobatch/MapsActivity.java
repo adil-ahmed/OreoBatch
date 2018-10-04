@@ -31,7 +31,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap = googleMap;
 
         //Satellite version
-        mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
+        mMap.setMapType(GoogleMap.MAP_TYPE_TERRAIN);
         // Add a marker in Sydney and move the camera
         LatLng moutnAdora = new LatLng(24.900215, 91.873221);
 
